@@ -1,0 +1,72 @@
+# 🫁 Pneumonia Detection from Chest X-Rays
+
+A deep learning project to classify chest X-ray images as **Pneumonia** or **Normal**, using Convolutional Neural Networks (CNN). Built with reproducibility and experimentation in mind using **DVC**.
+
+---
+
+## 🚀 Project Structure
+
+├── models
+│   ├── cnn_model.h5
+│   └── cnn_model.h5.dvc
+├── README.md 
+├── requirements.txt
+└── data
+└── src
+    ├── eval.ipynb
+    ├── train.ipynb
+    ├── training_history.pkl
+    └── visualize_samples.ipynb
+
+    ## 📦 Features
+
+- ✅ **Binary image classification** (Normal vs Pneumonia)
+- ✅ **Image preprocessing** with resizing and normalization
+- ✅ **CNN-based architecture** using Keras
+- ✅ **Training pipeline** with accuracy & loss tracking
+- ✅ **DVC** for versioning datasets and models
+
+---
+
+## 🧠 Model Overview
+
+- Input size: `128x128x3`
+- Architecture: `Conv2D → MaxPool → Dropout → Dense`
+- Loss: `Binary Crossentropy`
+- Optimizer: `Adam`
+- Metrics: `Accuracy`
+
+---
+
+## 🛠️ Installation
+
+```bash
+git clone https://github.com/Labreo/pneumonia-detection.git
+cd pneumonia-detection
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+We use the Chest X-Ray Images (Pneumonia) dataset.
+Extract it inside the data/raw/ folder as:
+
+data/chest_xray/
+├── train/
+├── test/
+└── val/
+
+---
+
+Usage
+
+1. Train and process the model
+
+python src/train.ipynb
+
+3. Evaluate the model
+
+python src/eval.ipynb
